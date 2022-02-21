@@ -1,0 +1,23 @@
+{
+  "name": "evive-assesment",
+  "version": "1.0.0",
+  "description": "diner assesment",
+  "main": "diner.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eterral/evive-assesment.git"
+  },
+  "author": "elliott terral",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eterral/evive-assesment/issues"
+  },
+  "homepage": "https://github.com/eterral/evive-assesment#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "type":"module"
+}
