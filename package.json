@@ -4,7 +4,7 @@
   "description": "diner assesment",
   "main": "diner.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/eterral/evive-assesment#readme",
   "dependencies": {
+    "jest": "^27.5.1",
     "readline-sync": "^1.4.10"
   },
-  "type":"module"
+  "type": "module"
 }
