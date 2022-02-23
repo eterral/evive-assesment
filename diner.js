@@ -1,11 +1,9 @@
-// import readlineSync from "readline-sync";
-
 function processOrder(order) {
-  // let order = readlineSync.question(`Enter you order: `);
   // declare items as object to total mains/sides/drinks/desserts
   let items = {};
   // split meal from items ordered
-  processedOrder = order.split(" ");
+  let processedOrder = order.split(" ");
+  //Check to make sure item ids are passed
   if (processedOrder.length != 2) {
     return "Invalid input";
   }
@@ -16,6 +14,7 @@ function processOrder(order) {
   processedOrder.forEach((item) => {
     items[item] = (items[item] || 0) + 1;
   });
+  //Check to see if Main and Side are missing and just a meal is passed
   if (!items["1"] && !items["2"]) {
     return "Unable to process. Main is missing. Side is missing";
   }
@@ -42,6 +41,7 @@ function processOrder(order) {
       return lunchOrder(items);
     case "dinner":
       return dinnerOrder(items);
+    //Check to see if a nonstandard meal name is passed
     default:
       return "Invalid meal type";
   }
@@ -49,12 +49,12 @@ function processOrder(order) {
 
 function breakfastOrder(items) {
   let reciept = "";
+  //look up table for breakfast
   let breakfastMenuItems = {
     1: "Eggs",
     2: "Toast",
     3: "Coffee",
   };
-  //Check if both main and side is missing
   //Create reciept output for breakfast
   if (items["1"] > 1) {
     reciept += `${breakfastMenuItems["1"]}(${items["1"]}) `;
@@ -73,18 +73,17 @@ function breakfastOrder(items) {
   } else {
     reciept += "Water";
   }
-  console.log(reciept);
   return reciept;
 }
 
 function lunchOrder(items) {
   let reciept = "";
+  //look up table for lunch
   let lunchMenuItems = {
     1: "Sandwich",
     2: "Chips",
     3: "Soda",
   };
-  //Check if both main and side is missing
   //Create reciept output for lunch
   if (items["1"] > 1) {
     reciept += `${lunchMenuItems["1"]}(${items["1"]}) `;
@@ -103,11 +102,11 @@ function lunchOrder(items) {
   } else {
     reciept += "Water";
   }
-  console.log(reciept);
   return reciept;
 }
 function dinnerOrder(items) {
   let reciept = "";
+  //Look up table for dinner
   let dinnerMenuItems = {
     1: "Steak",
     2: "Potatoes",
@@ -143,6 +142,7 @@ function dinnerOrder(items) {
   return reciept;
 }
 
+//Expor modules for jest
 module.exports = {
   processOrder,
   breakfastOrder,

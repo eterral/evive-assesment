@@ -1,11 +1,11 @@
 let order = require("../diner.js");
 
 //General tests
-test("test if meal has ids", () => {
+test("Test if meal has ids", () => {
   expect(order.processOrder("breakfast")).toBe("Invalid input");
 });
 
-test("test if meal type is vaild", () => {
+test("Test if meal type is vaild", () => {
   expect(order.processOrder("Lupper 1,2,3")).toBe("Invalid meal type");
 });
 
